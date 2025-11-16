@@ -218,9 +218,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Trần Anh Tuấn**
 
 - 🌐 **Website**: 
-- 💻 **GitHub**: 
-- 📧 **Email**: 
-- 💼 **LinkedIn**: 
+- 💻 **GitHub**: https://github.com/atdav3
+- 📧 **Email**: davetranxx@gmail.com
+- 💼 **LinkedIn**: https://www.linkedin.com/in/tuanat/
 
 ## ⭐ Show Your Support
 
