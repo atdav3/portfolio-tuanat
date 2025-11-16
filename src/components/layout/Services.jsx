@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { FaCode, FaChartLine, FaNetworkWired, FaServer, FaFileAlt, FaTachometerAlt, FaCogs, FaReact, FaNodeJs, FaGitAlt, FaDocker, FaAws, FaPython, FaLinux, FaPalette, FaBug } from 'react-icons/fa'
-import { SiRedis, SiPostgresql, SiTailwindcss, SiNextdotjs, SiTypescript } from 'react-icons/si'
+import { FaCode, FaNetworkWired, FaServer, FaTachometerAlt, FaReact, FaNodeJs, FaGitAlt, FaPython, FaPalette } from 'react-icons/fa'
+import { SiTailwindcss, SiNextdotjs, SiTypescript } from 'react-icons/si'
 
 const Services = ({ theme }) => {
     const [mounted, setMounted] = useState(false)
@@ -98,7 +98,7 @@ const Services = ({ theme }) => {
                                 <h3 className={`text-xl font-bold ${
                                     theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
                                 }`}>
-                                    AI-powered web system
+                                    Full-Stack Web Development
                                 </h3>
                             </div>
                         </div>
@@ -109,13 +109,30 @@ const Services = ({ theme }) => {
                                 : 'bg-white/80 border-blue-300/50 hover:border-blue-500/70'
                         }`}>
                             <div className="flex items-center mb-4">
-                                <FaChartLine className={`text-3xl mr-4 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                                <FaReact className={`text-3xl mr-4 ${
+                                    theme === 'dark' ? 'text-cyan-400' : 'text-cyan-600'
                                 }`} />
                                 <h3 className={`text-xl font-bold ${
                                     theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
                                 }`}>
-                                    Business Analysis
+                                    Frontend Development
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div className={`backdrop-blur-md rounded-2xl p-6 border transition-all duration-300 hover:scale-105 ${
+                            theme === 'dark' 
+                                ? 'bg-gray-900/60 border-blue-500/30 hover:border-blue-400/50' 
+                                : 'bg-white/80 border-blue-300/50 hover:border-blue-500/70'
+                        }`}>
+                            <div className="flex items-center mb-4">
+                                <FaServer className={`text-3xl mr-4 ${
+                                    theme === 'dark' ? 'text-green-400' : 'text-green-600'
+                                }`} />
+                                <h3 className={`text-xl font-bold ${
+                                    theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
+                                }`}>
+                                    Backend Development
                                 </h3>
                             </div>
                         </div>
@@ -132,41 +149,7 @@ const Services = ({ theme }) => {
                                 <h3 className={`text-xl font-bold ${
                                     theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
                                 }`}>
-                                    System Design
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div className={`backdrop-blur-md rounded-2xl p-6 border transition-all duration-300 hover:scale-105 ${
-                            theme === 'dark' 
-                                ? 'bg-gray-900/60 border-blue-500/30 hover:border-blue-400/50' 
-                                : 'bg-white/80 border-blue-300/50 hover:border-blue-500/70'
-                        }`}>
-                            <div className="flex items-center mb-4">
-                                <FaServer className={`text-3xl mr-4 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                                }`} />
-                                <h3 className={`text-xl font-bold ${
-                                    theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
-                                }`}>
-                                    API Design
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div className={`backdrop-blur-md rounded-2xl p-6 border transition-all duration-300 hover:scale-105 ${
-                            theme === 'dark' 
-                                ? 'bg-gray-900/60 border-blue-500/30 hover:border-blue-400/50' 
-                                : 'bg-white/80 border-blue-300/50 hover:border-blue-500/70'
-                        }`}>
-                            <div className="flex items-center mb-4">
-                                <FaFileAlt className={`text-3xl mr-4 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                                }`} />
-                                <h3 className={`text-xl font-bold ${
-                                    theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
-                                }`}>
-                                    Documentation
+                                    API Development
                                 </h3>
                             </div>
                         </div>
@@ -178,29 +161,12 @@ const Services = ({ theme }) => {
                         }`}>
                             <div className="flex items-center mb-4">
                                 <FaTachometerAlt className={`text-3xl mr-4 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                                    theme === 'dark' ? 'text-purple-400' : 'text-purple-600'
                                 }`} />
                                 <h3 className={`text-xl font-bold ${
                                     theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
                                 }`}>
-                                    Performance & Caching
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div className={`backdrop-blur-md rounded-2xl p-6 border transition-all duration-300 hover:scale-105 ${
-                            theme === 'dark' 
-                                ? 'bg-gray-900/60 border-blue-500/30 hover:border-blue-400/50' 
-                                : 'bg-white/80 border-blue-300/50 hover:border-blue-500/70'
-                        }`}>
-                            <div className="flex items-center mb-4">
-                                <FaCogs className={`text-3xl mr-4 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                                }`} />
-                                <h3 className={`text-xl font-bold ${
-                                    theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
-                                }`}>
-                                    DevOps
+                                    Database Design
                                 </h3>
                             </div>
                         </div>
@@ -212,29 +178,12 @@ const Services = ({ theme }) => {
                         }`}>
                             <div className="flex items-center mb-4">
                                 <FaPalette className={`text-3xl mr-4 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                                    theme === 'dark' ? 'text-pink-400' : 'text-pink-600'
                                 }`} />
                                 <h3 className={`text-xl font-bold ${
                                     theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
                                 }`}>
                                     UI/UX Design
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div className={`backdrop-blur-md rounded-2xl p-6 border transition-all duration-300 hover:scale-105 ${
-                            theme === 'dark' 
-                                ? 'bg-gray-900/60 border-blue-500/30 hover:border-blue-400/50' 
-                                : 'bg-white/80 border-blue-300/50 hover:border-blue-500/70'
-                        }`}>
-                            <div className="flex items-center mb-4">
-                                <FaBug className={`text-3xl mr-4 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                                }`} />
-                                <h3 className={`text-xl font-bold ${
-                                    theme === 'dark' ? 'text-blue-100' : 'text-blue-800'
-                                }`}>
-                                    Testing & QA
                                 </h3>
                             </div>
                         </div>
@@ -307,18 +256,6 @@ const Services = ({ theme }) => {
                                     }`} />
                                     <span className="text-blue-800 dark:text-blue-100">Python</span>
                                 </div>
-                                <div className="flex items-center">
-                                    <SiPostgresql className={`text-2xl mr-3 ${
-                                        theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                                    }`} />
-                                    <span className="text-blue-800 dark:text-blue-100">PostgreSQL</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <SiRedis className={`text-2xl mr-3 ${
-                                        theme === 'dark' ? 'text-red-400' : 'text-red-600'
-                                    }`} />
-                                    <span className="text-blue-800 dark:text-blue-100">Redis</span>
-                                </div>
                             </div>
                         </div>
 
@@ -337,24 +274,6 @@ const Services = ({ theme }) => {
                                         theme === 'dark' ? 'text-orange-400' : 'text-orange-600'
                                     }`} />
                                     <span className="text-blue-800 dark:text-blue-100">Git & GitHub</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <FaDocker className={`text-2xl mr-3 ${
-                                        theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                                    }`} />
-                                    <span className="text-blue-800 dark:text-blue-100">Docker</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <FaAws className={`text-2xl mr-3 ${
-                                        theme === 'dark' ? 'text-orange-400' : 'text-orange-600'
-                                    }`} />
-                                    <span className="text-blue-800 dark:text-blue-100">AWS</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <FaLinux className={`text-2xl mr-3 ${
-                                        theme === 'dark' ? 'text-white' : 'text-black'
-                                    }`} />
-                                    <span className="text-blue-800 dark:text-blue-100">Linux</span>
                                 </div>
                             </div>
                         </div>

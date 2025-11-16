@@ -10,12 +10,11 @@ import Hero from "./hero/Hero";
 import About from "./about/About";
 import Services from "./Services";
 import Projects from "./Projects";
-import Showcase from "./Showcase";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import ClockWidget from "./ClockWidget";
 
-const SECTIONS = ["hero", "about", "services", "projects", "showcase", "contact"];
+const SECTIONS = ["hero", "about", "services", "projects", "contact"];
 
 // CRITICAL: Zero re-render components
 const StableClock = memo(ClockWidget, () => true); // Never re-render unless forced
@@ -29,7 +28,6 @@ const StableHero = memo(Hero, (prev, next) => prev.theme === next.theme);
 const StableAbout = memo(About, (prev, next) => prev.theme === next.theme);
 const StableServices = memo(Services, (prev, next) => prev.theme === next.theme);
 const StableProjects = memo(Projects, (prev, next) => prev.theme === next.theme);
-const StableShowcase = memo(Showcase, (prev, next) => prev.theme === next.theme);
 const StableContact = memo(Contact, (prev, next) => prev.theme === next.theme);
 const StableFooter = memo(Footer, (prev, next) => prev.theme === next.theme);
 
@@ -182,7 +180,6 @@ export default function HomePageClient() {
             <StableAbout theme={theme} />
             <StableServices theme={theme} />
             <StableProjects theme={theme} />
-            <StableShowcase theme={theme} />
             <StableContact theme={theme} scrollToSection={scrollToSectionRef.current} />
             <StableFooter theme={theme} />
 

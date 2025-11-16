@@ -32,7 +32,7 @@ const Modal = ({ isOpen, onClose, theme, dockRect, logoRect }) => {
       } else {
         // Desktop/Tablet: keep existing logic
         if (logoRect) {
-          // Căn giữa theo logo Vietcq
+          // Căn giữa theo logo Trần Anh Tuấn
           left = logoRect.left + (logoRect.width / 2) - (width / 2);
         } else {
           // Fallback: căn giữa màn hình

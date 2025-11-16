@@ -62,18 +62,87 @@ const ClockWidget = ({ theme }) => {
                     : 'border-gray-300/50 bg-white/90'
             } backdrop-blur-lg shadow-lg`}>
                 
-                {/* Original SVG Clock Face Background */}
-                <div 
-                    className={`absolute inset-1 rounded-full ${
-                        theme === 'dark' ? 'opacity-80' : 'opacity-90'
-                    }`}
-                    style={{
-                        backgroundImage: 'url(/img/trong-dong-dong-son.svg)',
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center',
-                    }}
-                />
+                {/* Clock Face Background with Numbers */}
+                <svg 
+                    className="absolute inset-0 w-full h-full"
+                    viewBox="0 0 100 100"
+                >
+                    {/* Clock Face Circle */}
+                    <circle
+                        cx="50"
+                        cy="50"
+                        r="48"
+                        fill={theme === 'dark' ? '#1f2937' : '#ffffff'}
+                        stroke={theme === 'dark' ? '#374151' : '#e5e7eb'}
+                        strokeWidth="1"
+                    />
+                    
+                    {/* Hour Markers */}
+                    {[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((hour, index) => {
+                        const angle = (hour * 30 - 90) * (Math.PI / 180);
+                        const x1 = 50 + 40 * Math.cos(angle);
+                        const y1 = 50 + 40 * Math.sin(angle);
+                        const x2 = 50 + 45 * Math.cos(angle);
+                        const y2 = 50 + 45 * Math.sin(angle);
+                        return (
+                            <line
+                                key={hour}
+                                x1={x1}
+                                y1={y1}
+                                x2={x2}
+                                y2={y2}
+                                stroke={theme === 'dark' ? '#9ca3af' : '#6b7280'}
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
+                        );
+                    })}
+                    
+                    {/* Minute Markers */}
+                    {Array.from({ length: 60 }, (_, i) => {
+                        if (i % 5 !== 0) { // Skip hour markers
+                            const angle = (i * 6 - 90) * (Math.PI / 180);
+                            const x1 = 50 + 42 * Math.cos(angle);
+                            const y1 = 50 + 42 * Math.sin(angle);
+                            const x2 = 50 + 44 * Math.cos(angle);
+                            const y2 = 50 + 44 * Math.sin(angle);
+                            return (
+                                <line
+                                    key={i}
+                                    x1={x1}
+                                    y1={y1}
+                                    x2={x2}
+                                    y2={y2}
+                                    stroke={theme === 'dark' ? '#4b5563' : '#9ca3af'}
+                                    strokeWidth="0.5"
+                                    strokeLinecap="round"
+                                />
+                            );
+                        }
+                        return null;
+                    })}
+                    
+                    {/* Hour Numbers */}
+                    {[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((hour) => {
+                        const angle = (hour * 30 - 90) * (Math.PI / 180);
+                        const x = 50 + 32 * Math.cos(angle);
+                        const y = 50 + 32 * Math.sin(angle);
+                        return (
+                            <text
+                                key={hour}
+                                x={x}
+                                y={y}
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                                fontSize="6"
+                                fill={theme === 'dark' ? '#e5e7eb' : '#1f2937'}
+                                fontWeight="600"
+                            >
+                                {hour}
+                            </text>
+                        );
+                    })}
+                </svg>
 
                 {/* Clock Hands SVG */}
                 <svg 

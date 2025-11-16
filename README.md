@@ -1,47 +1,6 @@
-![Home](./public/data/project-demo/portfolio/home.png)
-
-# Portfolio Vietcq
+# Portfolio Trần Anh Tuấn
 
 A modern, responsive portfolio website built with Next.js 15 and React 19, featuring a sleek design with dark/light theme support, interactive 3D elements, dynamic project galleries, and comprehensive project management system.
-
-## 🌟 Demo Screenshots
-
-<div align="center">
-
-### Hero
-![Hero](./public/data/project-demo/portfolio/portfolio%20(1).png)
-
-### About me
-![About me](./public/data/project-demo/portfolio/portfolio%20(2).png)
-
-### Services Overview
-![Services Overview](./public/data/project-demo/portfolio/portfolio%20(3).png)
-
-### Repositories
-![Repositories](./public/data/project-demo/portfolio/portfolio%20(4).png)
-
-### Project showcase
-![Project showcase](./public/data/project-demo/portfolio/portfolio%20(5).png)
-
-### Contact Form
-![Contact Form](./public/data/project-demo/portfolio/portfolio%20(6).png)
-
-### Windows start
-![Windows start](./public/data/project-demo/portfolio/portfolio%20(7).png)
-
-### Project Details
-![Project Details](./public/data/project-demo/portfolio/portfolio%20(8).png)
-
-### Gallery System
-![Gallery System](./public/data/project-demo/portfolio/portfolio%20(9).png)
-
-### Ideas Section
-![Ideas Section](./public/data/project-demo/portfolio/portfolio%20(10).png)
-
-### Blog System
-![Blog System](./public/data/project-demo/portfolio/portfolio%20(11).png)
-
-</div>
 
 ## 🚀 Features
 
@@ -49,7 +8,6 @@ A modern, responsive portfolio website built with Next.js 15 and React 19, featu
 - **Dark/Light Theme** - Toggle between themes with persistent preferences and system detection
 - **macOS-style Dock** - Interactive navigation dock with hover magnification effects and smooth transitions
 - **3D Elements** - Three.js integration for interactive 3D models and immersive experiences
-- **Dynamic Gallery System** - Advanced project showcase with automatic image management and responsive layouts
 - **Responsive Design** - Optimized for all device sizes from mobile to desktop
 - **Project Management** - Comprehensive project detail pages with features, technologies, and galleries
 - **Blog System** - Full-featured blog with markdown support and admin panel
@@ -97,14 +55,12 @@ portfolio/
 │   ├── app/                    # Next.js 15 App Router
 │   │   ├── layout.jsx         # Root layout with theme provider
 │   │   ├── page.jsx           # Home page with all sections
-│   │   ├── gallery/           # Dynamic gallery system
 │   │   ├── project/[id]/      # Dynamic project detail pages
 │   │   ├── blog/              # Blog system with markdown support
 │   │   │   └── [slug]/        # Dynamic blog post pages
 │   │   ├── admin/             # Admin dashboard for content management
 │   │   ├── ideas/             # Ideas showcase page
 │   │   └── api/               # API routes
-│   │       ├── gallery/       # Gallery data API
 │   │       ├── projects/      # Project data API
 │   │       └── admin/         # Admin API endpoints
 │   ├── components/
@@ -114,7 +70,6 @@ portfolio/
 │   │   │   ├── Navigation.jsx # Main navigation with scroll detection
 │   │   │   ├── Projects.jsx   # GitHub repositories showcase
 │   │   │   ├── Services.jsx   # Services offered section
-│   │   │   ├── Showcase.jsx   # Featured projects showcase
 │   │   │   ├── Contact.jsx    # Contact form with validation
 │   │   │   ├── Footer.jsx     # Footer with social links
 │   │   │   └── ClockWidget.jsx # Real-time clock widget
@@ -122,11 +77,7 @@ portfolio/
 │   │   │   ├── ProjectOverview.jsx    # Project hero section
 │   │   │   ├── ProjectDetails.jsx     # Timeline and role details
 │   │   │   ├── ProjectFeatures.jsx    # Key features and achievements
-│   │   │   ├── ProjectGallery.jsx     # Integrated gallery component
 │   │   │   └── TrongDongBackground.jsx # Special background for Giveback project
-│   │   ├── gallery/           # Gallery system components
-│   │   │   ├── index.jsx      # Main gallery page client
-│   │   │   └── ProjectCards.jsx # Animated project cards with infinite scroll
 │   │   ├── blog/              # Blog system components
 │   │   │   ├── BlogList.jsx   # Blog posts listing
 │   │   │   └── BlogPost.jsx   # Individual blog post display
@@ -151,11 +102,9 @@ portfolio/
 │   │   │   └── SocialList.jsx       # Social media links
 │   │   ├── magicui/           # Enhanced UI components
 │   │   │   └── highlighter.jsx # Text highlighting effects
-│   │   └── Gallery.jsx        # Main gallery component with advanced features
 │   ├── config/
 │   │   └── navigation.js      # Navigation configuration for all pages
 │   ├── hooks/                 # Custom React hooks
-│   │   ├── useGallery.js      # Gallery data management hook
 │   │   ├── useGitHubRepos.js  # GitHub API integration hook
 │   │   └── useBlog.js         # Blog data management hook
 │   ├── utils/                 # Utility functions
@@ -167,8 +116,6 @@ portfolio/
 ├── public/
 │   ├── data/                  # Static data files
 │   │   ├── project-detail/    # Project detail JSON files
-│   │   ├── project-demo/      # Project screenshot galleries
-│   │   │   └── portfolio/     # Portfolio project screenshots
 │   │   ├── blog/              # Blog data
 │   │   │   ├── posts.json     # Blog posts metadata
 │   │   │   └── images/        # Blog post images
@@ -201,8 +148,8 @@ portfolio/
 
 ```bash
 # Clone repository
-git clone https://github.com/CaoQuocViet/portfolio-vietcq.git
-cd portfolio-vietcq
+git clone https://github.com/atdav3/portfolio-tuanat.git
+cd portfolio-tuanat
 
 # Install dependencies  
 npm install
@@ -268,12 +215,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Cao Quoc Viet (Vietcq)**
+**Trần Anh Tuấn**
 
-- 🌐 **Website**: [https://portfolio-vietcq.vercel.app/](https://portfolio-vietcq.vercel.app/)
-- 💻 **GitHub**: [@CaoQuocViet](https://github.com/CaoQuocViet)
-- 📧 **Email**: [vietcao10@gmail.com](mailto:vietcao10@gmail.com)
-- 💼 **LinkedIn**: [Cao Quoc Viet](https://linkedin.com/in/cao-quoc-viet-a10841230)
+- 🌐 **Website**: 
+- 💻 **GitHub**: 
+- 📧 **Email**: 
+- 💼 **LinkedIn**: 
 
 ## ⭐ Show Your Support
 

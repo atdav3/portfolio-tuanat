@@ -4,14 +4,13 @@ import {
     CogIcon,
     BriefcaseIcon,
     EnvelopeIcon,
-    PhotoIcon,
     LightBulbIcon,
     DocumentTextIcon
 } from "@heroicons/react/24/solid";
 
 // Navigation config cho trang Home - full navigation
 export const HOME_NAVIGATION_ITEMS = [
-    { id: "logo", label: "Vietcq", isLogo: true },
+    { id: "logo", label: "TuanAT", isLogo: true },
     {
         id: "hero",
         label: "Home",
@@ -48,14 +47,6 @@ export const HOME_NAVIGATION_ITEMS = [
         bg: "bg-gradient-to-br from-red-500 to-red-600",
     },
     {
-        id: "gallery",
-        label: "Gallery",
-        icon: PhotoIcon,
-        color: "text-white",
-        bg: "bg-gradient-to-br from-purple-500 to-purple-600",
-        link: "/gallery",
-    },
-    {
         id: "ideas",
         label: "Ideas",
         icon: LightBulbIcon,
@@ -73,38 +64,9 @@ export const HOME_NAVIGATION_ITEMS = [
     },
 ];
 
-// Navigation config cho trang Gallery - chỉ logo + home + ideas + theme
-export const GALLERY_NAVIGATION_ITEMS = [
-    { id: "logo", label: "Vietcq", isLogo: true },
-    {
-        id: "home",
-        label: "Home",
-        icon: HomeIcon,
-        color: "text-white",
-        bg: "bg-gradient-to-br from-blue-500 to-blue-600",
-        link: "/",
-    },
-    {
-        id: "ideas",
-        label: "Ideas",
-        icon: LightBulbIcon,
-        color: "text-white",
-        bg: "bg-gradient-to-br from-yellow-500 to-yellow-600",
-        link: "/ideas",
-    },
-    {
-        id: "blog",
-        label: "Blog",
-        icon: DocumentTextIcon,
-        color: "text-white",
-        bg: "bg-gradient-to-br from-indigo-500 to-indigo-600",
-        link: "/blog",
-    },
-];
-
-// Navigation config cho trang Project detail - logo + home + gallery + theme
+// Navigation config cho trang Project detail - logo + home + ideas + blog + theme
 export const PROJECT_NAVIGATION_ITEMS = [
-    { id: "logo", label: "Vietcq", isLogo: true },
+    { id: "logo", label: "TuanAT", isLogo: true },
     {
         id: "home",
         label: "Home",
@@ -112,14 +74,6 @@ export const PROJECT_NAVIGATION_ITEMS = [
         color: "text-white",
         bg: "bg-gradient-to-br from-blue-500 to-blue-600",
         link: "/",
-    },
-    {
-        id: "gallery",
-        label: "Gallery",
-        icon: PhotoIcon,
-        color: "text-white",
-        bg: "bg-gradient-to-br from-purple-500 to-purple-600",
-        link: "/gallery",
     },
     {
         id: "ideas",
@@ -139,9 +93,9 @@ export const PROJECT_NAVIGATION_ITEMS = [
     },
 ];
 
-// Navigation config cho trang Blog - logo + home + gallery + ideas + theme
+// Navigation config cho trang Blog - logo + home + ideas + theme
 export const BLOG_NAVIGATION_ITEMS = [
-    { id: "logo", label: "Vietcq", isLogo: true },
+    { id: "logo", label: "TuanAT", isLogo: true },
     {
         id: "home",
         label: "Home",
@@ -149,14 +103,6 @@ export const BLOG_NAVIGATION_ITEMS = [
         color: "text-white",
         bg: "bg-gradient-to-br from-blue-500 to-blue-600",
         link: "/",
-    },
-    {
-        id: "gallery",
-        label: "Gallery",
-        icon: PhotoIcon,
-        color: "text-white",
-        bg: "bg-gradient-to-br from-purple-500 to-purple-600",
-        link: "/gallery",
     },
     {
         id: "ideas",
@@ -168,9 +114,9 @@ export const BLOG_NAVIGATION_ITEMS = [
     },
 ];
 
-// Navigation config cho trang Ideas - logo + home + gallery + theme
+// Navigation config cho trang Ideas - logo + home + blog + theme
 export const IDEAS_NAVIGATION_ITEMS = [
-    { id: "logo", label: "Vietcq", isLogo: true },
+    { id: "logo", label: "TuanAT", isLogo: true },
     {
         id: "home",
         label: "Home",
@@ -178,14 +124,6 @@ export const IDEAS_NAVIGATION_ITEMS = [
         color: "text-white",
         bg: "bg-gradient-to-br from-blue-500 to-blue-600",
         link: "/",
-    },
-    {
-        id: "gallery",
-        label: "Gallery",
-        icon: PhotoIcon,
-        color: "text-white",
-        bg: "bg-gradient-to-br from-purple-500 to-purple-600",
-        link: "/gallery",
     },
     {
         id: "blog",
@@ -199,15 +137,6 @@ export const IDEAS_NAVIGATION_ITEMS = [
 
 // Navigation config cho Modal - direct đến các trang
 export const MODAL_NAVIGATION_ITEMS = [
-    {
-        id: "gallery",
-        icon: PhotoIcon,
-        title: "Gallery",
-        description: "Project screenshots and visual demos",
-        link: "/gallery",
-        color: "text-white",
-        bg: "bg-gradient-to-br from-purple-500 to-purple-600",
-    },
     {
         id: "ideas",
         icon: LightBulbIcon,

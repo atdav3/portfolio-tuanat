@@ -6,7 +6,7 @@ import { info } from "../../utils/info";
 
 const FooterLogo = ({ theme }) => (
     <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-        Vietcq
+        TuanAT
     </h3>
 );
 
@@ -30,7 +30,7 @@ const FooterSocialLinks = ({ theme, socialLinks }) => (
 
 const FooterCopyright = ({ theme }) => (
     <div className="text-center text-lg mb-8 text-gray-600 dark:text-gray-400">
-        © 2025 Vietcq. All rights reserved.
+        © 2025 Trần Anh Tuấn. All rights reserved.
     </div>
 );
 

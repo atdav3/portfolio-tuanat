@@ -14,9 +14,6 @@ export const navigateToPage = (sectionId) => {
         case 'hero':
             window.location.href = '/';
             break;
-        case 'gallery':
-            window.location.href = '/gallery';
-            break;
         default:
             // For same-page sections, scroll normally
             document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });

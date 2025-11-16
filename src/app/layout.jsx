@@ -5,8 +5,8 @@ import { LanguageProvider } from "../contexts/LanguageContext";
 
 /** @type {import('next').Metadata} */
 export const metadata = {
-    title: "Vietcq",
-    description: "Portfolio of Vietcq",
+    title: "TuanAT",
+    description: "Portfolio of Trần Anh Tuấn",
 };
 
 const calSans = LocalFont({

@@ -1,4 +1,3 @@
-import PCModel from "./PCModel";
 import { info } from "../../../utils/info";
 
 const About = ({ theme }) => {
@@ -55,6 +54,23 @@ const About = ({ theme }) => {
         .group:hover .lined-background {
           animation-play-state: paused;
         }
+
+        /* Custom scrollbar for content area */
+        .scroll-area {
+          scrollbar-width: thin; /* Firefox */
+          scrollbar-color: ${theme === 'dark' ? '#4b5563 #111827' : '#9ca3af #e5e7eb'}; /* thumb track */
+        }
+        .scroll-area::-webkit-scrollbar { /* Chrome/Safari */
+          width: 8px;
+        }
+        .scroll-area::-webkit-scrollbar-track {
+          background: ${theme === 'dark' ? '#111827' : '#e5e7eb'};
+          border-radius: 8px;
+        }
+        .scroll-area::-webkit-scrollbar-thumb {
+          background-color: ${theme === 'dark' ? '#4b5563' : '#9ca3af'};
+          border-radius: 8px;
+        }
       `}</style>
 
       <section
@@ -82,9 +98,9 @@ const About = ({ theme }) => {
             />
           </div>
 
-          <div className="lg:grid lg:grid-cols-2 gap-16 items-center">
+          <div className="flex justify-center">
             {/* Scrolling Card */}
-            <div className={`relative max-w-xl lg:max-w-none mx-auto h-96 sm:h-120 lg:h-160 rounded-lg shadow-2xl border overflow-hidden group ${
+            <div className={`relative w-full max-w-7xl mx-auto h-[100vh] sm:h-[100vh] rounded-lg shadow-2xl border overflow-hidden group ${
               theme === 'dark' 
                 ? 'bg-slate-800 border-blue-200/20' 
                 : 'bg-white border-blue-300/40'
@@ -121,21 +137,25 @@ const About = ({ theme }) => {
                 }`}></div>
               </div>
 
-              {/* Scrollable Content */}
-              <div className="relative pt-8 pb-8 overflow-hidden lined-background">
-                                 <div className="scrolling-text">
-                   {/* Nội dung nhân đôi để scroll vô tận */}
-                   <ContentBlock theme={theme} />
-                   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-                   <ContentBlock theme={theme} />
-                 </div>
+            {/* Scrollable Content - two columns with vertical divider */}
+            <div className="relative pt-10 pb-10 overflow-auto scroll-area">
+              <div className="flex flex-col lg:flex-row gap-10">
+                {/* Left column */}
+                <div className="flex-1 min-w-0">
+                  <LeftColumn theme={theme} />
+                </div>
+
+                {/* Vertical divider on desktop */}
+                <div className="hidden lg:block w-px bg-gray-300 dark:bg-gray-700" />
+
+                {/* Right column */}
+                <div className="flex-1 min-w-0">
+                  <RightColumn theme={theme} />
+                </div>
               </div>
             </div>
-
-            {/* 3D Model - Responsive sizes */}
-            <div className="relative flex items-center justify-center mt-8 lg:mt-0 h-96 sm:h-120 md:h-144 lg:h-full w-full">
-              <PCModel />
             </div>
+
           </div>
         </div>
       </section>
@@ -143,20 +163,20 @@ const About = ({ theme }) => {
   );
 }
 
-/* Tách phần nội dung ra để reuse */
-function ContentBlock({ theme }) {
+/* Tách phần nội dung ra thành 2 cột */
+function LeftColumn({ theme }) {
   return (
     <>
-      <div className="px-8 py-4 text-left relative z-10">
+      <div className="px-12 py-4 text-left relative z-10">
         <h1 className={`text-2xl font-bold mb-4 text-center ${
           theme === 'dark' ? 'text-white' : 'text-gray-900'
         }`}>
-          Hi 👋, I'm <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Cao Quốc Việt</span>
+          Hi 👋, I'm <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Trần Anh Tuấn</span>
         </h1>
         <h3 className={`text-lg font-semibold mb-6 text-center ${
           theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
         }`}>
-          Fullstack Developer from Ho Chi Minh City, Vietnam 🇻🇳
+          Fullstack Developer from Hanoi Capital Region, Vietnam 🇻🇳
         </h3>
         
         <div className={`space-y-4 text-sm mb-6 ${
@@ -165,7 +185,7 @@ function ContentBlock({ theme }) {
           {/* Location & Work */}
           <div className="bg-gradient-to-r from-blue-50/10 to-cyan-50/10 rounded-lg p-3 border border-blue-200/20">
             <p className="mb-2">
-              📍 <strong className="text-blue-500">Location:</strong> Ho Chi Minh City, Vietnam
+              📍 <strong className="text-blue-500">Location:</strong> Hanoi Capital Region
             </p>
             <p>
               💼 <strong className="text-blue-500">Work Style:</strong> Online with English-speaking teams & offline with local Vietnamese companies
@@ -175,10 +195,10 @@ function ContentBlock({ theme }) {
           {/* Education */}
           <div className="bg-gradient-to-r from-purple-50/10 to-blue-50/10 rounded-lg p-3 border border-purple-200/20">
             <p className="mb-2">
-              🎓 <strong className="text-purple-500">Current Study:</strong> University of Science, Vietnam National University HCMC (HCMUS) - Since 2022
+              🎓 <strong className="text-purple-500">Current Study:</strong> East Asia University of Technology
             </p>
             <p>
-              🚀 <strong className="text-purple-500">Coding Journey:</strong> Started coding in 2021 after studying at HCMUT (Bach Khoa University)
+              🚀 <strong className="text-purple-500">Coding Journey:</strong> Started coding in 2022 while studying at EAUT
             </p>
           </div>
 
@@ -206,9 +226,15 @@ function ContentBlock({ theme }) {
           </div>
         </div>
       </div>
+    </>
+  );
+};
 
+function RightColumn({ theme }) {
+  return (
+    <>
       {/* Contact & Social */}
-      <div className="px-8 py-4">
+      <div className="px-12 py-4">
         <h3 className={`text-lg font-semibold mb-4 ${
           theme === 'dark' ? 'text-white' : 'text-gray-900'
         }`}>
@@ -220,15 +246,15 @@ function ContentBlock({ theme }) {
           <div className="flex items-center gap-2">
             <span>📱</span>
             <strong className="text-blue-500">Phone:</strong>
-            <a href="tel:+84367252854" className="text-blue-500 hover:text-blue-400 transition-colors">
-              +84 367 252 854
+            <a href="tel:+84393225719" className="text-blue-500 hover:text-blue-400 transition-colors">
+              +84 393 225 719
             </a>
           </div>
           <div className="flex items-center gap-2">
             <span>✉️</span>
             <strong className="text-blue-500">Email:</strong>
-            <a href="mailto:vietcao10@gmail.com" className="text-blue-500 hover:text-blue-400 transition-colors">
-              vietcao10@gmail.com
+            <a href="mailto:davetranxx@gmail.com" className="text-blue-500 hover:text-blue-400 transition-colors">
+              davetranxx@gmail.com
             </a>
           </div>
         </div>
@@ -248,7 +274,7 @@ function ContentBlock({ theme }) {
       </div>
 
       {/* Current Projects */}
-      <div className="px-8 py-4">
+      <div className="px-12 py-4">
         <h3 className={`text-lg font-semibold mb-3 ${
           theme === 'dark' ? 'text-white' : 'text-gray-900'
         }`}>
@@ -257,15 +283,14 @@ function ContentBlock({ theme }) {
         <div className={`text-sm space-y-2 ${
           theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
         }`}>
-          <p><span className="text-blue-500 font-semibold">• Giveback:</span> Social impact platform</p>
-          <p><span className="text-purple-500 font-semibold">• ByteBridge:</span> Development tools</p>
-          <p><span className="text-green-500 font-semibold">• ABAP RAP Flight:</span> Enterprise booking system</p>
-          <p><span className="text-orange-500 font-semibold">• StormPC:</span> Hardware/software solution</p>
+          <p><span className="text-blue-500 font-semibold">• Bookstore Manager:</span> Book rental website</p>
+          <p><span className="text-purple-500 font-semibold">• HomeStay Manager :</span> Rental room management</p>
+          <p><span className="text-purple-500 font-semibold">• Weather App :</span> Application weather forecast</p>
         </div>
       </div>
 
       {/* Languages and Tools */}
-      <div className="px-8 py-4">
+      <div className="px-12 py-4">
         <h3 className={`text-lg font-semibold mb-3 ${
           theme === 'dark' ? 'text-white' : 'text-gray-900'
         }`}>
@@ -274,16 +299,15 @@ function ContentBlock({ theme }) {
         <div className={`text-sm space-y-2 ${
           theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
         }`}>
-          <p><strong className="text-blue-500">Programming:</strong> C++, Python, JavaScript, ABAP</p>
+          <p><strong className="text-blue-500">Programming:</strong> C++, Python, JavaScript</p>
           <p><strong className="text-cyan-500">Web Development:</strong> React, Node.js, HTML/CSS, Next.js</p>
-          <p><strong className="text-green-500">Database:</strong> PostgreSQL, MongoDB</p>
-          <p><strong className="text-purple-500">DevOps:</strong> Docker, Git, Linux, Nginx</p>
-          <p><strong className="text-orange-500">Game Development:</strong> Unity</p>
+          <p><strong className="text-green-500">Database:</strong> MongoDB, MySQL</p>
+          <p><strong className="text-orange-500">Web Development:</strong> Unity</p>
         </div>
       </div>
 
       {/* GitHub Stats */}
-      <div className="px-8 py-4">
+      <div className="px-12 py-4">
         <h3 className={`text-lg font-semibold mb-3 ${
           theme === 'dark' ? 'text-white' : 'text-gray-900'
         }`}>
@@ -302,7 +326,7 @@ function ContentBlock({ theme }) {
       </div>
 
       {/* Fun Fact */}
-      <div className="px-8 py-4">
+      <div className="px-12 py-4">
         <div className="bg-gradient-to-r from-yellow-50/10 to-orange-50/10 rounded-lg p-4 border border-yellow-200/20">
           <h3 className={`text-lg font-semibold mb-2 ${
             theme === 'dark' ? 'text-yellow-400' : 'text-yellow-600'

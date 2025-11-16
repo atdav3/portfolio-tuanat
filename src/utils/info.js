@@ -1,17 +1,18 @@
 export const info = {
-  description: "Passionate Full Stack Developer specializing in modern web technologies.",
-  githubUsername: "caoquocviet",
-  avatarUrl: "https://avatars.githubusercontent.com/u/caoquocviet?v=4",
-  displayName: "Cao Quốc Việt",
-  email: "vietcao10@gmail.com",
+  description: "Full Stack Developer tại Việt Nam.",
+  githubUsername: "atdav3",
+  avatarUrl: "https://github.com/atdav3.png",
+  displayName: "Trần Anh Tuấn",
+  email: "davetranxx@gmail.com",
   social: {
-    linkedin: "https://linkedin.com/in/cao-quoc-viet",
-    twitter: "https://twitter.com",
-    github: "https://github.com/caoquocviet",
-    youtube: "https://www.youtube.com/@vietcq",
-    discord: "https://discord.gg/PsZbxn77dy",
-    facebook: "https://facebook.com/cao.quocviet.23.01",
-    daily: "https://app.daily.dev/vietcq",
-    website: "https://portfolio-vietcq.vercel.app/"
+    linkedin: "https://www.linkedin.com/in/anhat/",
+    twitter: "https://x.com/atdav3",
+    github: "https://github.com/atdav3",
+    youtube: "",
+    discord: "",
+    facebook: "https://www.facebook.com/nauthn/",
+    instagram: "https://www.instagram.com/ah.ttuan/",
+    daily: "https://app.daily.dev/tuanat",
+    website: ""
   }
 };

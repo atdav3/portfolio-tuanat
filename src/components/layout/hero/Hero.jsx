@@ -12,8 +12,8 @@ import { Highlighter } from "@/components/magicui/highlighter";
 
 const handleGetMyCV = () => {
     const link = document.createElement("a");
-    link.href = "/data/CaoQuocViet_FullStackDev.pdf";
-    link.download = "CaoQuocViet_FullStackDev.pdf"; // Tên file tải về
+    link.href = "/data/TranAnhTuan-FullStackDev.pdf";
+    link.download = "TranAnhTuan_FullStackDev.pdf"; // Tên file tải về
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

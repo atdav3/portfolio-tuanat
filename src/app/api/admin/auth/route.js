@@ -12,7 +12,7 @@ export async function POST(request) {
             // Setup new admin password
             const crypto = await import('crypto')
             const hash = crypto.createHash('sha256')
-            hash.update(password + 'vietcq-admin-salt')
+            hash.update(password + 'tuanat-admin-salt')
             const hashedPassword = hash.digest('hex')
             
             const adminConfig = {
@@ -42,7 +42,7 @@ export async function POST(request) {
             // Hash the provided password
             const crypto = await import('crypto')
             const hash = crypto.createHash('sha256')
-            hash.update(password + 'vietcq-admin-salt')
+            hash.update(password + 'tuanat-admin-salt')
             const hashedPassword = hash.digest('hex')
             
             if (hashedPassword === adminConfig.passwordHash) {

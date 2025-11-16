@@ -13,7 +13,7 @@ const nextConfig = {
     },
     env: {
         /** GitHub username loaded in build time. */
-        GITHUB_USERNAME: process.env.GITHUB_USERNAME || 'caoquocviet',
+        GITHUB_USERNAME: process.env.GITHUB_USERNAME || 'atdav3',
     },
     images: {
         remotePatterns: [

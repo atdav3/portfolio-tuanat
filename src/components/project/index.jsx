@@ -8,7 +8,6 @@ import Footer from '../layout/Footer'
 import ProjectOverview from './ProjectOverview'
 import ProjectDetails from './ProjectDetails'
 import ProjectFeatures from './ProjectFeatures'
-import ProjectGallery from './ProjectGallery'
 import { LoadingSpinner } from "../ui/loading";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { PROJECT_NAVIGATION_ITEMS } from '../../config/navigation'
@@ -75,11 +74,11 @@ const ProjectPage = () => {
                         Project Not Found
                     </h1>
                     <Button 
-                        href="/gallery"
+                        href="/"
                         variant="primary"
                         size="md"
                     >
-                        Back to Gallery
+                        Back to Home
                     </Button>
                 </div>
             </div>
@@ -102,7 +101,6 @@ const ProjectPage = () => {
                 <ProjectOverview theme={theme} projectData={projectData} projectId={params.id} />
                 <ProjectDetails theme={theme} projectData={projectData} />
                 <ProjectFeatures theme={theme} projectData={projectData} />
-                <ProjectGallery theme={theme} projectData={projectData} />
             </main>
 
             {/* Footer */}

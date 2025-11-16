@@ -10,7 +10,7 @@ const BlogEditor = ({ post, onSave, onCancel }) => {
         category: '',
         tags: [],
         featured: false,
-        author: 'Viet CQ',
+        author: 'TuanAT',
         image: '',
         readTime: '5 min read'
     })

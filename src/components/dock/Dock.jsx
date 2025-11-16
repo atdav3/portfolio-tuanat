@@ -28,7 +28,7 @@ const NavigationItem = ({
             ? "shadow-lg"
             : ""
         }`}
-        title="Open Vietcq Modal"
+        title="Open Trần Anh Tuấn Modal"
       >
         <span
           className="text-base sm:text-lg font-bold transition-all duration-500 bg-gradient-to-r 
@@ -37,7 +37,7 @@ const NavigationItem = ({
                      bg-clip-text text-transparent"
           style={{ fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif" }}
         >
-          {window.innerWidth < 1024 ? "V" : "Vietcq"}
+          {window.innerWidth < 1024 ? "T" : "TuanAT"}
         </span>
         {window.innerWidth >= 1024 && (
           <span
