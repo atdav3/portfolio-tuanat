@@ -64,22 +64,21 @@ const ProjectsList = ({ theme }) => {
     }
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-3">
             {projects.map((project) => (
                 <div
                     key={project.id}
                     onClick={() => handleProjectClick(project.id)}
                     className="group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 
-                              rounded-2xl p-6 
-                              transition-all duration-500 shadow-lg hover:shadow-2xl 
-                              hover:-translate-y-2 hover:scale-[1.02] cursor-pointer
-                              hover:shadow-blue-500/10 dark:hover:shadow-blue-400/20
-                              before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br 
-                              before:from-blue-500/5 before:to-purple-500/5 before:opacity-0 
-                              hover:before:opacity-100 before:transition-opacity before:duration-500"
+                              rounded-xl p-4 sm:p-5
+                              transition-all duration-300 shadow-md hover:shadow-xl 
+                              hover:-translate-y-1 hover:scale-[1.01] cursor-pointer
+                              border border-gray-200 dark:border-gray-700
+                              hover:border-blue-400 dark:hover:border-blue-500
+                              hover:shadow-blue-500/10 dark:hover:shadow-blue-400/20"
                 >
                     {/* Project Name */}
-                    <h4 className="font-bold text-lg mb-3 text-gray-900 dark:text-white 
+                    <h4 className="font-bold text-base sm:text-lg mb-2 text-gray-900 dark:text-white 
                                   group-hover:text-blue-600 dark:group-hover:text-blue-400 
                                   transition-colors duration-300">
                         {project.name}
@@ -87,7 +86,7 @@ const ProjectsList = ({ theme }) => {
                     
                     {/* Project Tagline */}
                     {project.tagline && (
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed
                                       overflow-hidden"
                            style={{
                              display: '-webkit-box',
@@ -97,6 +96,13 @@ const ProjectsList = ({ theme }) => {
                             {project.tagline}
                         </p>
                     )}
+                    
+                    {/* Arrow indicator */}
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
                 </div>
             ))}
         </div>
