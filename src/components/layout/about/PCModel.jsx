@@ -74,52 +74,43 @@ export default function PCModel() {
             <LoadingSpinner />
           </div>
         }>
-          {typeof window !== 'undefined' ? (
-            <Canvas
-              camera={{ position: [0, 0, 4], fov: 60 }}
-              style={{ background: 'transparent' }}
-              gl={{ 
-                antialias: false,
-                powerPreference: "high-performance"
-              }}
-              onCreated={({ gl }) => {
-                // Simple WebGL availability check
-                try {
-                  gl.getContext('webgl') || gl.getContext('experimental-webgl');
-                } catch (error) {
-                  console.warn('WebGL not supported:', error);
-                }
-              }}
-            >
-              <ambientLight intensity={0.6} />
-              <directionalLight position={[10, 10, 5]} intensity={1.2} />
-              <pointLight position={[-10, -10, -5]} intensity={0.5} />
-              
-              <Environment preset="studio" />
-              
-              <Model />
-              
-              <OrbitControls 
-                enablePan={true}
-                enableZoom={true}
-                maxPolarAngle={Math.PI / 1.5}
-                minPolarAngle={Math.PI / 6}
-                autoRotate={true}
-                autoRotateSpeed={0.2}
-                maxDistance={8}
-                minDistance={2}
-                enableDamping={true}
-                dampingFactor={0.05}
-              />
-            </Canvas>
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-lg mx-auto mb-2"></div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">3D Model (Client Only)</p>
-              </div>
-            </div>
-          )}
+          <Canvas
+            camera={{ position: [0, 0, 4], fov: 60 }}
+            style={{ background: 'transparent' }}
+            gl={{ 
+              antialias: false,
+              powerPreference: "high-performance"
+            }}
+            onCreated={({ gl }) => {
+              // Simple WebGL availability check
+              try {
+                gl.getContext('webgl') || gl.getContext('experimental-webgl');
+              } catch (error) {
+                console.warn('WebGL not supported:', error);
+              }
+            }}
+          >
+            <ambientLight intensity={0.6} />
+            <directionalLight position={[10, 10, 5]} intensity={1.2} />
+            <pointLight position={[-10, -10, -5]} intensity={0.5} />
+            
+            <Environment preset="studio" />
+            
+            <Model />
+            
+            <OrbitControls 
+              enablePan={true}
+              enableZoom={true}
+              maxPolarAngle={Math.PI / 1.5}
+              minPolarAngle={Math.PI / 6}
+              autoRotate={true}
+              autoRotateSpeed={0.2}
+              maxDistance={8}
+              minDistance={2}
+              enableDamping={true}
+              dampingFactor={0.05}
+            />
+          </Canvas>
         </Suspense>
       )}
     </div>

@@ -154,19 +154,35 @@ export function BatteryIcon() {
 }
 
 export function CalendarIcon() {
-  const now = new Date();
-  const time = now.toLocaleTimeString('en-US', { 
-    hour: '2-digit', 
-    minute: '2-digit',
-    hour12: true
-  }).replace(' ', ''); // Remove space between time and AM/PM
-  const date = now.toLocaleDateString('en-GB');
+  const [time, setTime] = useState('');
+  const [date, setDate] = useState('');
+
+  useEffect(() => {
+    const updateDateTime = () => {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: true
+      }).replace(' ', ''); // Remove space between time and AM/PM
+      const dateStr = now.toLocaleDateString('en-GB');
+      setTime(timeStr);
+      setDate(dateStr);
+    };
+
+    // Update immediately
+    updateDateTime();
+
+    // Update every second
+    const interval = setInterval(updateDateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors cursor-pointer flex items-center justify-center">
       <div className="flex flex-col items-start justify-center text-xs text-gray-700 dark:text-gray-300 font-medium">
-        <div className="text-[14px] leading-none mb-1 whitespace-nowrap">{time}</div>
-        <div className="text-[14px] leading-none whitespace-nowrap">{date}</div>
+        <div className="text-[14px] leading-none mb-1 whitespace-nowrap">{time || '--:--'}</div>
+        <div className="text-[14px] leading-none whitespace-nowrap">{date || '--/--/----'}</div>
       </div>
     </div>
   )

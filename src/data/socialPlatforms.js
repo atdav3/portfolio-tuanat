@@ -99,4 +99,14 @@ export const SOCIAL_PLATFORMS = [
     ),
     color: "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-emerald-400",
   },
+  {
+    label: "Buy Me a Coffee",
+    url: info.social.buymeacoffee,
+    icon: (
+      <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.38 0 2.5-1.12 2.5-2.5S19.88 3 18.5 3zm-1.5 6v1c0 2.76-2.24 5-5 5s-5-2.24-5-5V9h10zm1.5-4h.5c.28 0 .5.22.5.5S19.28 6 19 6H18V5zm-2.5 0H16v1h-1.5V5zm-3 0H13v1h-1.5V5zm-3 0H10v1H8.5V5z"/>
+      </svg>
+    ),
+    color: "bg-gradient-to-br from-amber-500 to-orange-500 text-white border-amber-400",
+  },
 ];

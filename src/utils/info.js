@@ -13,6 +13,7 @@ export const info = {
     facebook: "https://www.facebook.com/nauthn/",
     instagram: "https://www.instagram.com/ah.ttuan/",
     daily: "https://app.daily.dev/tuanat",
-    website: ""
+    website: "",
+    buymeacoffee: "https://buymeacoffee.com/tuanat"
   }
 };

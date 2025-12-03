@@ -1,9 +1,25 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 function GridBackground({ theme = 'dark', colorScheme = 'blue' }) {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [mounted, setMounted] = useState(false);
+
+    // Generate dots positions only on client side to avoid hydration mismatch
+    const dots = useMemo(() => {
+        if (!mounted) return [];
+        return [...Array(12)].map((_, i) => ({
+            id: i,
+            left: Math.random() * 100,
+            top: Math.random() * 100,
+            animation: `float ${3 + Math.random() * 4}s ease-in-out infinite ${Math.random() * 2}s`
+        }));
+    }, [mounted]);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     // Color configuration based on scheme
     const colors = {
@@ -80,19 +96,21 @@ function GridBackground({ theme = 'dark', colorScheme = 'blue' }) {
             />
 
             {/* Floating Dots */}
-            <div className="absolute inset-0">
-                {[...Array(12)].map((_, i) => (
-                    <div
-                        key={i}
-                        className={`absolute w-1 h-1 rounded-full ${currentColors.dots}`}
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animation: `float ${3 + Math.random() * 4}s ease-in-out infinite ${Math.random() * 2}s`
-                        }}
-                    />
-                ))}
-            </div>
+            {mounted && (
+                <div className="absolute inset-0">
+                    {dots.map((dot) => (
+                        <div
+                            key={dot.id}
+                            className={`absolute w-1 h-1 rounded-full ${currentColors.dots}`}
+                            style={{
+                                left: `${dot.left}%`,
+                                top: `${dot.top}%`,
+                                animation: dot.animation
+                            }}
+                        />
+                    ))}
+                </div>
+            )}
 
             {/* CSS Styles */}
             <style jsx>{`
