@@ -5,7 +5,7 @@ export const info = {
   displayName: "Trần Anh Tuấn",
   email: "davetranxx@gmail.com",
   social: {
-    linkedin: "https://www.linkedin.com/in/anhat/",
+    linkedin: "https://www.linkedin.com/in/tuanat/",
     twitter: "https://x.com/atdav3",
     github: "https://github.com/atdav3",
     youtube: "",
